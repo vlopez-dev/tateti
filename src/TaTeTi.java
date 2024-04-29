@@ -1,50 +1,43 @@
-import java.util.ArrayList;
-import java.util.Collections;
-
+import java.util.Scanner;
 
 public class TaTeTi {
-    private ArrayList <String> tablero;
+
+
+
     public TaTeTi(){
-        this.tablero=tablero;
+
+
+
+
+
     }
+
+
+
 
     public void jugar(){
-         tablero=new ArrayList<>(9);
-        Collections.fill(tablero, "-");
+        Scanner sc = new Scanner(System.in);
+        int fila = 0,columna = 0;
+        Jugador jugadorx=new Jugador('x');
+        Jugador jugadoro=new Jugador('o');
+        char [][] tableroinicial = new char[3][3];
+        Tablero tablero = new Tablero(tableroinicial);
+        tablero.inicioTablero();
+        tablero.mostrarTablero();
+        do {
 
-        mostrarTablero(tablero);
-
-
-
-
-    }
-
-    public void mostrarTablero(ArrayList<String> tablero){
-        System.out.println("Entre a mostrar tablero");
-        if (this.tablero.isEmpty()){
-            System.out.println("El tablero esta vacio");
-        }else {
-            for (String s: this.tablero) {
-                System.out.println(s);
-
-            }
-        }
+        System.out.println("Jugador " + jugadorx.getIdentificador() + " Ingresa la fila.0 -2 :");
+        fila=sc.nextInt();
+        System.out.println("Jugador " + jugadorx.getIdentificador() + "  Ingresa la columna.0 -2 :");
+        columna=sc.nextInt();
+        char [][]tableroMarcado= tablero.marcartablero(fila,columna,jugadorx);
+        tablero.mostrarTableroActualizado(tableroMarcado);
 
 
-    }
 
-    public void hayGanador(){
+        }while (true);
 
     }
-
-
-    public void hayEmpate(){
-
-        }
-
-
-
-
-
-
 }
+
+
