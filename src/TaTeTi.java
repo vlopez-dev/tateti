@@ -33,6 +33,16 @@ public class TaTeTi {
         char [][]tableroMarcado= tablero.marcartablero(fila,columna,jugadorx);
         tablero.mostrarTableroActualizado(tableroMarcado);
 
+        System.out.println("Jugador " + jugadoro.getIdentificador() + " Ingresa la fila.0 -2 :");
+        fila=sc.nextInt();
+        System.out.println("Jugador " + jugadoro.getIdentificador() + "  Ingresa la columna.0 -2 :");
+        columna=sc.nextInt();
+        tablero.marcartablero(fila,columna,jugadoro);
+        tablero.mostrarTableroActualizado(tableroMarcado);
+
+
+
+
 
 
         }while (true);

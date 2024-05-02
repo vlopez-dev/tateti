@@ -37,7 +37,7 @@ public class Tablero  {
             }
             System.out.println();
         }
-
+    
     }
 
 
@@ -50,12 +50,8 @@ public class Tablero  {
                 for (int i = 0; i < 3 ; i++) {
                     for (int j = 0; j < 3; j++) {
                         tablero[fila][columna]=jugador.getIdentificador();
-                        if (jugador.getIdentificador()=='x'){
-                            jugador.cambioDeJugador();
+
                         }
-
-
-                    }
 
                 }
                 return tablero;
