@@ -65,5 +65,51 @@ public class Tablero  {
 
 
 
+    public void hayEmpate(){
+
+    }
+
+
+    public boolean hayGanador(){
+
+
+        return revisarColumnas() || reviarFilas() || revisarDiagonales();
+    }
+
+
+    public boolean revisarColumnas(){
+        for (int i = 0; i < 3; i++) {
+            if (tablero [0][i] !='-' && tablero[0][i] == tablero[1][i] && tablero[1][i] ==tablero[2][i]){
+                return true;
+
+
+            }
+        }
+        return false;
+    }
+
+
+    public boolean reviarFilas(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (tablero[j][0] !='-' && tablero [j][0] == tablero [j][1] && tablero [j][1]== tablero [j][2]){
+                    return  true;
+                }
+            }
+
+        }
+        return false;
+    }
+
+
+    public boolean revisarDiagonales(){
+
+        if (tablero [0][0] !='-' && tablero[0][0] == tablero[1][1] && tablero[1][1] == tablero[2][2]){
+            if(tablero [2][2] != '-' && tablero [2][2] == tablero[1][1] && tablero [1][1]== tablero [0][0]){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

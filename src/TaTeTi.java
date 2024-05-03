@@ -39,6 +39,11 @@ public class TaTeTi {
         columna=sc.nextInt();
         tablero.marcartablero(fila,columna,jugadoro);
         tablero.mostrarTableroActualizado(tableroMarcado);
+        boolean resultado=tablero.hayGanador();
+        if (resultado == true){
+            System.out.println("Ganador el jugador" + jugador.getIdentificador());
+            break;
+        }
 
 
 
